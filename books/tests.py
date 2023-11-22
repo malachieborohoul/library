@@ -17,3 +17,9 @@ class BookTest(TestCase):
         self.assertEqual(self.book.subtitle,"An excellent subtitle" )
         self.assertEqual(self.book.author,"BSM" )
         self.assertEqual(self.book.isbn,"1234545" )
+
+    def test_book_listview(self):
+        response=self.client.get(reverse('home'))
+        self.assertEqual(response.status_code)
+        self.assertContains(response,"excellent subtitle")
+        self.assertTemplateUsed(response, "books/book_list.html")
