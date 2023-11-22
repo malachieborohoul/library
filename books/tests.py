@@ -12,3 +12,8 @@ class BookTest(TestCase):
             author= "BSM",
             isbn= "1234545"
         )
+    def test_book_content(self):
+        self.assertEqual(self.book.title,"A good title" )
+        self.assertEqual(self.book.subtitle,"An excellent subtitle" )
+        self.assertEqual(self.book.author,"BSM" )
+        self.assertEqual(self.book.isbn,"1234545" )
